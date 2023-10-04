@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Corrida</title>    
+</head>
+<body>
+    <h1>Calculadora de Corrida</h1>
+
+    <input placeholder="Distancia em KM" id="campoDistancia"/>
+    <input placeholder="Tempo (min)" id="campoTempo"/>
+    <input placeholder="Preço da Gasolina (R$/litro):" id="campoPreco"/>
+
+    <button onclick="calculaCorrida()">Calcular Valor da Corrida</button> 
+        
+    <div>
+        <h2>Resultado:</h2>
+        <p><strong>Valor da Corrida:</strong> R$ <span id="totalCorrida"></span></p>
+    </div>      
+    
+    <script>        
+        const totalCorrida = document.getElementById("totalCorrida");                
+
+        function calculaCorrida(){
+            var valorTotal = (campoDistancia.value * campoPreco.value) + (campoTempo.value * (campoPreco.value / 60));
+            totalCorrida.textContent = valorTotal.toFixed(2);
+        }       
+
+    </script>
+</body>
+</html>
